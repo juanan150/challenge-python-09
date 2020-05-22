@@ -1,5 +1,5 @@
+"""Script que duplica los 0 de una lista sin modificar la longitud de la misma"""
 from typing import List
-
 
 class Solution:
     """Objeto del ejercicio"""
