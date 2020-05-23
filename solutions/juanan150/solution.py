@@ -7,13 +7,15 @@ class Solution:
         """Funcion que duplica los 0s"""
         temp = list(arr)
         j = 0
+
         for val in temp:
-            if j >= len(temp)-1:
+            if j == len(temp):
                 break
 
-            if val == 0:
+            if val == 0 and j < len(temp)-1:
+                arr[j] = val
                 j += 1
-                arr.insert(j, 0)
-                arr.pop(-1)
-
+                arr[j] = val
+            else:
+                arr[j] = val
             j += 1

@@ -11,8 +11,7 @@ class Grader(BaseGrader):
 #
     def eval_solution(self, test_case) -> bool:
         """Evaluates solution against the given test case."""
-        input_data = list(test_case[0])
-        want = list(test_case[1])
+        input_data, want = test_case
         self.f(input_data)
         results_differ = input_data != want
         if results_differ:
