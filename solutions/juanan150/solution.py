@@ -5,17 +5,28 @@ class Solution:
     """Objeto del ejercicio"""
     def duplicate_zeros(self, arr: List[int]):
         """Funcion que duplica los 0s"""
-        temp = list(arr)
-        j = 0
+        zeros = 0
+        for idx, val in enumerate(arr):
+            if val == 0 and idx + zeros < len(arr) - 1:
+                zeros += 1
+                last_zero = idx
 
-        for val in temp:
-            if j == len(temp):
+        j = len(arr) - 1
+        for _ in arr:
+            if j == 0:
                 break
+            arr[j] = arr[j - zeros]
+            if arr[j] == 0 and zeros > 0 and j - zeros <= last_zero:
+                arr[j-1] = 0
+                zeros -= 1
+                j -= 1
 
-            if val == 0 and j < len(temp)-1:
-                arr[j] = val
-                j += 1
-                arr[j] = val
-            else:
-                arr[j] = val
-            j += 1
+            j -= 1
+
+if __name__ == '__main__':
+    arr1 = [0, 0, 0, 0, 1, 2, 3, 4, 0, 0, 0, 6, 0, 7, 8, 9, 6]
+    sol = Solution()
+
+    sol.duplicate_zeros(arr1)
+
+    print(arr1)
