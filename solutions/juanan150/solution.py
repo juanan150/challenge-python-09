@@ -22,11 +22,3 @@ class Solution:
                 j -= 1
 
             j -= 1
-
-if __name__ == '__main__':
-    arr1 = [0, 0, 0, 0, 1, 2, 3, 4, 0, 0, 0, 6, 0, 7, 8, 9, 6]
-    sol = Solution()
-
-    sol.duplicate_zeros(arr1)
-
-    print(arr1)
